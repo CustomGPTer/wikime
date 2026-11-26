@@ -1,0 +1,40 @@
+# Publishes a release with the app file held on the dist branch.
+# Run it from the Actions tab and give the version, such as 1.0.
+name: Release
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Version to release, such as 1.0
+        required: true
+      prerelease:
+        description: Mark as a test build
+        type: boolean
+        default: false
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: dist
+      - name: Join any split files
+        run: |
+          for f in *.part-aa; do
+            [ -e "$f" ] || continue
+            name="${f%.part-aa}"
+            cat "$name".part-* > "$name"
+            rm "$name".part-*
+          done
+      - name: Check the files
+        run: sha256sum -c SHA256SUMS
+      - name: Publish the release
+        run: |
+          files=$(awk '{print $2}' SHA256SUMS)
+          extra=""
+          if [ "${{ inputs.prerelease }}" = "true" ]; then extra="--prerelease"; fi
+          gh release create "v${{ inputs.version }}" $files --target main --title "WikiMe ${{ inputs.version }}" --notes-file NOTES.md $extra
+        env:
+          GH_TOKEN: ${{ github.token }}

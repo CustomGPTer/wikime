@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WikiMe: a free, private Wikipedia reader for Android, with Tor built in</title>
+<meta name="description" content="WikiMe is a private reader for Wikipedia on Android. It only ever talks to Wikipedia, never shows a web address, can route everything through Tor, and keeps saved articles, history and highlights encrypted on your phone. No account, no adverts, no tracking.">
+<meta name="author" content="Jonathan Jackson">
+<link rel="canonical" href="https://customgpter.github.io/wikime/">
+<meta name="theme-color" content="#f7f4ee" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#080f22" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="WikiMe">
+<meta property="og:title" content="WikiMe: a free, private Wikipedia reader for Android, with Tor built in">
+<meta property="og:description" content="WikiMe is a private reader for Wikipedia on Android. It only ever talks to Wikipedia, never shows a web address, can route everything through Tor, and keeps saved articles, history and highlights encrypted on your phone. No account, no adverts, no tracking.">
+<meta property="og:url" content="https://customgpter.github.io/wikime/">
+<meta property="og:image" content="https://customgpter.github.io/wikime/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="WikiMe&#x27;s Explore screen: today&#x27;s featured article, a search bar and the tabs along the bottom">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="./assets/apple-touch-icon.png">
+<link rel="preload" href="./assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./assets/fonts/atkinson-hyperlegible-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="./assets/site.css?v=1">
+<link rel="stylesheet" href="./assets/house.css?v=1">
+<link rel="stylesheet" href="./assets/apps-list.css?v=1">
+<script src="./assets/apps-list.js?v=1" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"WikiMe","url":"https://customgpter.github.io/wikime/","description":"WikiMe is a private reader for Wikipedia on Android. It only ever talks to Wikipedia, never shows a web address, can route everything through Tor, and keeps saved articles, history and highlights encrypted on your phone. No account, no adverts, no tracking.","applicationCategory":"ReferenceApplication","operatingSystem":"Android 10 or later","softwareVersion":"1.0.0","downloadUrl":"https://github.com/CustomGPTer/wikime/releases/latest/download/WikiMe.apk","releaseNotes":"https://customgpter.github.io/wikime/releases.html","offers":{"@type":"Offer","price":"0","priceCurrency":"GBP"},"inLanguage":"en-GB","image":"https://customgpter.github.io/wikime/assets/og.png","featureList":["A page made for reading","Five themes","Notes and previews","Read aloud","Only Wikipedia","Tor switch","Encrypted lookups","No web addresses","Saved articles","Highlights and notes","History your way","All encrypted"],"author":{"@type":"Person","name":"Jonathan Jackson"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is WikiMe really free?","acceptedAnswer":{"@type":"Answer","text":"Yes. There is no paid version, no subscription and no adverts, and nothing in the app is locked."}},{"@type":"Question","name":"Is it made by Wikipedia?","acceptedAnswer":{"@type":"Answer","text":"No. WikiMe is an independent app that reads Wikipedia. The articles are written by Wikipedia's volunteers and shared under Wikipedia's own licence, which WikiMe credits on every article and when you share."}},{"@type":"Question","name":"Is it on Google Play?","acceptedAnswer":{"@type":"Answer","text":"No. WikiMe is a personal project and is downloaded from this site as an Android app file. It needs Android 10 or later."}},{"@type":"Question","name":"Why does it never show web addresses?","acceptedAnswer":{"@type":"Answer","text":"So it reads like a book, not a browser. Links inside Wikipedia open in WikiMe. A link to any other site asks first, shows only the site's name, and opens in your phone's own browser."}},{"@type":"Question","name":"What does the Tor switch do?","acceptedAnswer":{"@type":"Answer","text":"When it is on, every request goes through the Tor network, so Wikipedia and your network cannot link what you read to you. It is off by default because Tor is slower. While Tor is connecting, nothing is sent at all."}},{"@type":"Question","name":"Can I read without a signal?","acceptedAnswer":{"@type":"Answer","text":"Yes. Tap the bookmark on any article to save it with its pictures. Saved articles open with no connection, and can be updated whenever you like."}},{"@type":"Question","name":"What does Nearby send?","acceptedAnswer":{"@type":"Answer","text":"Only when you ask, and only after you agree: your approximate position, rounded to about a kilometre, is sent once to Wikipedia to find articles about places nearby. It is never stored."}},{"@type":"Question","name":"Can I edit Wikipedia with it?","acceptedAnswer":{"@type":"Answer","text":"No. WikiMe is for reading. It has no account and no sign-in, so there is nothing that can be linked to you."}},{"@type":"Question","name":"Does it work on an iPhone?","acceptedAnswer":{"@type":"Answer","text":"No. WikiMe is for Android phones and tablets only."}},{"@type":"Question","name":"Who made it?","acceptedAnswer":{"@type":"Answer","text":"WikiMe is made by Jonathan Jackson, an independent developer in the United Kingdom."}}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+<div class="wrap">
+<a class="brand" href="./" aria-label="WikiMe home"><svg viewBox="0 0 108 108" aria-hidden="true"><defs><radialGradient id="wmbg" cx="0.5" cy="0.41" r="0.75"><stop offset="0" stop-color="#1c3266"/><stop offset="0.5" stop-color="#122149"/><stop offset="1" stop-color="#080f22"/></radialGradient></defs><rect width="108" height="108" rx="24" fill="url(#wmbg)"/><circle cx="54" cy="54" r="27" fill="none" stroke="#D6AE62" stroke-width="1.6"/><path d="M38.5,44 L46,64 L54,49.5 L62,64 L69.5,44" fill="none" stroke="#D6AE62" stroke-width="2.1" stroke-linejoin="round" stroke-linecap="round"/><circle cx="38.5" cy="44" r="2.8" fill="#F1D9A2"/><circle cx="46" cy="64" r="2.8" fill="#F1D9A2"/><circle cx="54" cy="49.5" r="3.4" fill="#fff"/><circle cx="62" cy="64" r="2.8" fill="#F1D9A2"/><circle cx="69.5" cy="44" r="2.8" fill="#F1D9A2"/></svg><span>WikiMe</span></a>
+<nav aria-label="Main"><ul><li><a href="./#features">Features</a></li><li><a href="./compare.html">Compare</a></li><li><a href="./releases.html">Releases</a></li><li><a class="more-apps" href="./more-apps.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.6"/></svg>More apps</a></li></ul></nav>
+<a class="button small" href="https://github.com/CustomGPTer/wikime/releases/latest/download/WikiMe.apk"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11"/><path d="M7 10.5l5 5 5-5"/><path d="M5 20h14"/></svg>Download</a>
+</div>
+</header>
+<main id="main">
+<div class="hero">
+<div class="wrap hero-grid">
+<div class="hero-copy">
+<h1>All of Wikipedia. Nobody watching.</h1>
+<p class="lede">WikiMe is a reader for Wikipedia and nothing else. It talks only to Wikipedia's own servers, never shows a web address, and turns every article into a calm, beautiful page with a large photo, book-style type and a facts box you can actually read.</p><p class="lede">It is private from end to end: encrypted address lookups, an optional Tor switch, and saved articles, history and highlights encrypted on your phone. There is no account, no advert and nothing that tracks you.</p>
+
+<p class="get" id="download"><a class="button" href="https://github.com/CustomGPTer/wikime/releases/latest/download/WikiMe.apk"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11"/><path d="M7 10.5l5 5 5-5"/><path d="M5 20h14"/></svg>Download for Android</a><a class="aside" href="#install">How to install</a></p>
+<ul class="pills"><li>Version 1.0.0</li><li>Android 10 or later</li><li>24.9 MB</li></ul>
+<p class="facts">Free, with nothing to unlock. No adverts, no account with the developer, no tracking. <a href="compare.html">Compare</a> or read the <a href="releases.html">release notes</a>.</p>
+<p class="facts">Chrome may say the file might be harmful. It shows this for app files that do not come from Google Play. Choose Download anyway.</p>
+</div>
+<div class="hero-phone"><div class="phone"><img src="./assets/screens/explore.png" alt="Explore: today&#x27;s featured article, picture of the day, the news, on this day and the most read." width="393" height="852" fetchpriority="high"></div></div>
+</div>
+</div>
+
+<section class="promises" aria-label="In short">
+<div class="wrap"><ul><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.6 12.4l2.3 2.3 4.5-4.9"/></svg><span><b>Only Wikipedia</b><span>It cannot reach any other site.</span></span></li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.6 12.4l2.3 2.3 4.5-4.9"/></svg><span><b>No adverts</b><span>None in the app and none on this site.</span></span></li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.6 12.4l2.3 2.3 4.5-4.9"/></svg><span><b>Nothing to buy</b><span>Every feature is free, with nothing locked.</span></span></li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.6 12.4l2.3 2.3 4.5-4.9"/></svg><span><b>No account</b><span>Nothing to sign up for.</span></span></li></ul></div>
+</section>
+
+<section id="screens" aria-labelledby="screens-h">
+<div class="wrap">
+<h2 id="screens-h">A look inside</h2>
+<p class="intro">These are the real screens, drawn from the app&#x27;s own code with today&#x27;s Wikipedia. Swipe or scroll sideways to see them all.</p>
+<div class="gallery" tabindex="0" role="region" aria-label="Screens from WikiMe"><figure class="shot"><div class="phone"><img src="./assets/screens/opening.png" alt="The opening screen: points of light drift together into the WikiMe constellation." width="393" height="852" loading="eager" decoding="async"></div><figcaption>The opening screen: points of light drift together into the WikiMe constellation.</figcaption></figure><figure class="shot"><div class="phone"><img src="./assets/screens/explore.png" alt="Explore: today&#x27;s featured article, picture of the day, the news, on this day and the most read." width="393" height="852" loading="eager" decoding="async"></div><figcaption>Explore: today&#x27;s featured article, picture of the day, the news, on this day and the most read.</figcaption></figure><figure class="shot"><div class="phone"><img src="./assets/screens/article.png" alt="An article: a large photo, book-style type and a contents button that knows where you are." width="393" height="852" loading="eager" decoding="async"></div><figcaption>An article: a large photo, book-style type and a contents button that knows where you are.</figcaption></figure><figure class="shot"><div class="phone"><img src="./assets/screens/night.png" alt="The same article in the Night theme. There are also Paper, Sepia and Black." width="393" height="852" loading="eager" decoding="async"></div><figcaption>The same article in the Night theme. There are also Paper, Sepia and Black.</figcaption></figure><figure class="shot"><div class="phone"><img src="./assets/screens/maths.png" alt="Maths and diagrams stay sharp. This is the Black theme." width="393" height="852" loading="eager" decoding="async"></div><figcaption>Maths and diagrams stay sharp. This is the Black theme.</figcaption></figure><figure class="shot"><div class="phone"><img src="./assets/screens/contents.png" alt="Contents: jump to any section, with the one you are reading marked." width="393" height="852" loading="eager" decoding="async"></div><figcaption>Contents: jump to any section, with the one you are reading marked.</figcaption></figure><figure class="shot"><div class="phone"><img src="./assets/screens/highlight.png" alt="Highlights and notes in four colours, kept encrypted on the phone." width="393" height="852" loading="eager" decoding="async"></div><figcaption>Highlights and notes in four colours, kept encrypted on the phone.</figcaption></figure><figure class="shot"><div class="phone"><img src="./assets/screens/search.png" alt="Search with pictures as you type, and inside articles too." width="393" height="852" loading="eager" decoding="async"></div><figcaption>Search with pictures as you type, and inside articles too.</figcaption></figure><figure class="shot"><div class="phone"><img src="./assets/screens/saved.png" alt="Saved articles with their pictures, for reading with no signal, in your own lists." width="393" height="852" loading="eager" decoding="async"></div><figcaption>Saved articles with their pictures, for reading with no signal, in your own lists.</figcaption></figure><figure class="shot"><div class="phone"><img src="./assets/screens/history.png" alt="History, kept for as long as you choose, with private reading a tap away." width="393" height="852" loading="eager" decoding="async"></div><figcaption>History, kept for as long as you choose, with private reading a tap away.</figcaption></figure><figure class="shot"><div class="phone"><img src="./assets/screens/settings.png" alt="Reading settings: five themes, text size, serif or sans, spacing and more." width="393" height="852" loading="eager" decoding="async"></div><figcaption>Reading settings: five themes, text size, serif or sans, spacing and more.</figcaption></figure><figure class="shot"><div class="phone"><img src="./assets/screens/nearby.png" alt="Nearby: articles about places around you, on a compass. Off until you agree." width="393" height="852" loading="eager" decoding="async"></div><figcaption>Nearby: articles about places around you, on a compass. Off until you agree.</figcaption></figure><figure class="shot"><div class="phone"><img src="./assets/screens/lock.png" alt="App lock with a PIN or fingerprint." width="393" height="852" loading="eager" decoding="async"></div><figcaption>App lock with a PIN or fingerprint.</figcaption></figure><figure class="shot"><div class="phone"><img src="./assets/screens/widgets.png" alt="Home screen widgets: featured article, on this day and a search bar." width="393" height="852" loading="eager" decoding="async"></div><figcaption>Home screen widgets: featured article, on this day and a search bar.</figcaption></figure></div>
+</div>
+</section>
+
+<section id="how" aria-labelledby="how-h">
+<div class="wrap">
+<h2 id="how-h">How it works</h2>
+<p class="intro">WikiMe fetches articles straight from Wikipedia and rebuilds each one on your phone, so nothing else ever loads.</p>
+<ol class="steps"><li><h3>Open it</h3><p>Today's Wikipedia is waiting on Explore. Search, tap the dice for a random article, or shake the phone.</p></li><li><h3>Read</h3><p>Every article is rebuilt as a clean page: no web addresses, no Wikipedia scripts, nothing from anywhere else.</p></li><li><h3>Keep it</h3><p>Save an article with its pictures for reading offline, highlight the parts that matter, or have it read aloud.</p></li></ol>
+</div>
+</section>
+
+<section id="features" aria-labelledby="features-h">
+<div class="wrap">
+<h2 id="features-h">Everything is in, and all of it is free</h2>
+<p class="intro">Nothing below is held back for a paid tier, because there is no paid tier.</p>
+<div class="groups"><div class="group"><h3>Reading</h3><dl><div><dt>A page made for reading</dt><dd>A large photo header, book-style serif type, the facts box as a tidy card and folding sections.</dd></div><div><dt>Five themes</dt><dd>Auto, Paper, Sepia, Night and Black, with text size, serif or sans, spacing and justify.</dd></div><div><dt>Notes and previews</dt><dd>Tap a note number for its source, long-press a link for a preview card, find in page.</dd></div><div><dt>Read aloud</dt><dd>Your phone's own offline voice reads the article, with lock-screen controls and speed.</dd></div></dl></div><div class="group"><h3>Private by default</h3><dl><div><dt>Only Wikipedia</dt><dd>Every other site is refused, three times over, and the connection is pinned to Wikipedia's certificates.</dd></div><div><dt>Tor switch</dt><dd>One switch sends everything through Tor. Nothing is sent until Tor has connected.</dd></div><div><dt>Encrypted lookups</dt><dd>Address lookups are encrypted, so the network cannot see which pages you read.</dd></div><div><dt>No web addresses</dt><dd>Links that leave Wikipedia ask first and show only the site's name.</dd></div></dl></div><div class="group"><h3>Yours to keep</h3><dl><div><dt>Saved articles</dt><dd>Kept with their pictures for reading with no signal, in reading lists you name.</dd></div><div><dt>Highlights and notes</dt><dd>Four colours and your own notes, all in one list.</dd></div><div><dt>History your way</dt><dd>Kept for a day, a week, 30 days, 90 days or always, or switch on private reading.</dd></div><div><dt>All encrypted</dt><dd>Saved articles, pictures, history and highlights are encrypted with a key held in the phone's secure hardware.</dd></div></dl></div><div class="group"><h3>Everywhere</h3><dl><div><dt>44 languages</dt><dd>Any article in every language that has it, with right-to-left languages laid out properly.</dd></div><div><dt>Nearby</dt><dd>Articles about places around you, on a compass and a list. Off until you agree.</dd></div><div><dt>Look up in WikiMe</dt><dd>Select a word in any app and a summary card slides up.</dd></div><div><dt>Widgets, lock and tablets</dt><dd>Three home screen widgets, an app lock, screenshot blocking and a tablet layout.</dd></div></dl></div></div>
+</div>
+</section>
+
+<section id="privacy" aria-labelledby="privacy-h">
+<div class="wrap">
+<h2 id="privacy-h">Private by design</h2>
+<ul class="plain"><li><h3>Only Wikipedia, ever</h3><p>WikiMe cannot reach any site but Wikipedia's own. No adverts, analytics, crash reports or Google services.</p></li><li><h3>Tor when you want it</h3><p>Switch Tor on and every request goes through it, by name, so the phone never looks an address up itself.</p></li><li><h3>Encrypted on the phone</h3><p>Saved articles, pictures, history and highlights are encrypted with AES-256 and a key the phone will not let out.</p></li></ul>
+</div>
+</section>
+
+<section id="install" aria-labelledby="install-h">
+<div class="wrap">
+<h2 id="install-h">Installing and updating</h2>
+<p class="intro">WikiMe is not on Google Play, so your phone asks a couple of extra questions the first time.</p>
+<ol class="steps"><li><h3>Download the app file</h3><p>Tap Download on your phone. The file is called WikiMe.apk and is about 24.9 MB. If Chrome says the file might be harmful, choose Download anyway.</p></li><li><h3>Allow the install</h3><p>Open the file. The first time, Android asks you to allow your browser to install apps. Allow it, go back and tap Install. If Google Play Protect steps in, choose More details, then Install anyway.</p></li><li><h3>Updating later</h3><p>WikiMe only ever talks to Wikipedia, so it never checks for updates itself. Settings, Check for a newer version opens the release notes in your browser. Install the new file over the old one and your saved articles, history and settings are kept.</p></li></ol>
+<p class="after-table">Version 1.0.0, released 26 November 2026. See the <a href="releases.html">release notes</a>, or <a href="releases.html#checking">check your download</a>.</p>
+</div>
+</section>
+
+<section id="questions" aria-labelledby="questions-h">
+<div class="wrap">
+<h2 id="questions-h">Questions</h2>
+<div class="faq"><details><summary>Is WikiMe really free?</summary><p>Yes. There is no paid version, no subscription and no adverts, and nothing in the app is locked.</p></details><details><summary>Is it made by Wikipedia?</summary><p>No. WikiMe is an independent app that reads Wikipedia. The articles are written by Wikipedia's volunteers and shared under Wikipedia's own licence, which WikiMe credits on every article and when you share.</p></details><details><summary>Is it on Google Play?</summary><p>No. WikiMe is a personal project and is downloaded from this site as an Android app file. It needs Android 10 or later.</p></details><details><summary>Why does it never show web addresses?</summary><p>So it reads like a book, not a browser. Links inside Wikipedia open in WikiMe. A link to any other site asks first, shows only the site's name, and opens in your phone's own browser.</p></details><details><summary>What does the Tor switch do?</summary><p>When it is on, every request goes through the Tor network, so Wikipedia and your network cannot link what you read to you. It is off by default because Tor is slower. While Tor is connecting, nothing is sent at all.</p></details><details><summary>Can I read without a signal?</summary><p>Yes. Tap the bookmark on any article to save it with its pictures. Saved articles open with no connection, and can be updated whenever you like.</p></details><details><summary>What does Nearby send?</summary><p>Only when you ask, and only after you agree: your approximate position, rounded to about a kilometre, is sent once to Wikipedia to find articles about places nearby. It is never stored.</p></details><details><summary>Can I edit Wikipedia with it?</summary><p>No. WikiMe is for reading. It has no account and no sign-in, so there is nothing that can be linked to you.</p></details><details><summary>Does it work on an iPhone?</summary><p>No. WikiMe is for Android phones and tablets only.</p></details><details><summary>Who made it?</summary><p>WikiMe is made by Jonathan Jackson, an independent developer in the United Kingdom.</p></details></div>
+</div>
+</section>
+
+<section class="closing" aria-labelledby="closing-h">
+<div class="wrap">
+<div><h2 id="closing-h">Read Wikipedia in private</h2><p>Free, with no adverts and nothing to unlock. Made by the developer of several other free Android apps: <a href="more-apps.html">see them all</a>.</p></div>
+<a class="button" href="https://github.com/CustomGPTer/wikime/releases/latest/download/WikiMe.apk"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11"/><path d="M7 10.5l5 5 5-5"/><path d="M5 20h14"/></svg>Download for Android</a>
+</div>
+</section>
+</main>
+<footer class="colophon">
+<div class="wrap">
+<div>
+<a class="brand" href="./" aria-label="WikiMe home"><svg viewBox="0 0 108 108" aria-hidden="true"><defs><radialGradient id="wmbg" cx="0.5" cy="0.41" r="0.75"><stop offset="0" stop-color="#1c3266"/><stop offset="0.5" stop-color="#122149"/><stop offset="1" stop-color="#080f22"/></radialGradient></defs><rect width="108" height="108" rx="24" fill="url(#wmbg)"/><circle cx="54" cy="54" r="27" fill="none" stroke="#D6AE62" stroke-width="1.6"/><path d="M38.5,44 L46,64 L54,49.5 L62,64 L69.5,44" fill="none" stroke="#D6AE62" stroke-width="2.1" stroke-linejoin="round" stroke-linecap="round"/><circle cx="38.5" cy="44" r="2.8" fill="#F1D9A2"/><circle cx="46" cy="64" r="2.8" fill="#F1D9A2"/><circle cx="54" cy="49.5" r="3.4" fill="#fff"/><circle cx="62" cy="64" r="2.8" fill="#F1D9A2"/><circle cx="69.5" cy="44" r="2.8" fill="#F1D9A2"/></svg><span>WikiMe</span></a>
+<p>&copy; 2026 Jonathan Jackson. WikiMe is an independent app.</p>
+<p>This site uses no cookies and no tracking.</p>
+<p>Set in Bricolage Grotesque and Atkinson Hyperlegible.</p>
+</div>
+<nav aria-label="The app"><h2>The app</h2><ul>
+<li><a href="./">Home</a></li>
+<li><a href="./compare.html">Compare</a></li>
+<li><a href="./releases.html">Release notes</a></li>
+
+</ul></nav>
+<nav aria-label="Legal"><h2>Legal</h2><ul>
+<li><a href="./privacy.html">Privacy policy</a></li>
+<li><a href="./terms.html">Terms of use</a></li>
+<li><a href="./licences.html">Licences</a></li>
+</ul></nav>
+<nav aria-label="More"><h2>More</h2><ul>
+<li><a href="./more-apps.html">More apps</a></li>
+<li><a href="https://customgpter.github.io/">All apps</a></li>
+<li><a href="https://github.com/CustomGPTer/wikime/issues">Contact</a></li>
+</ul></nav>
+</div>
+</footer>
+</body>
+</html>

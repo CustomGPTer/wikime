@@ -1,0 +1,33 @@
+:root{--page:#f7f4ee;--panel:#ffffff;--raised:#efe9dd;--ink:#13182a;--soft:#5d6070;--rule:#e2dccf;--accent:#1c3266;--accent-ink:#ffffff;--lamp:#1c3266;--lamp-ink:#ffffff;--lamp-text:#1c3266}
+@media (prefers-color-scheme:dark){:root{--page:#080f22;--panel:#0f1a36;--raised:#162447;--ink:#eef0f6;--soft:#9aa3bb;--rule:#22305a;--accent:#d6ae62;--accent-ink:#1a1406;--lamp:#d6ae62;--lamp-ink:#1a1406;--lamp-text:#d6ae62}}
+/* House additions: phone frames, the screens gallery, the lawful-use box and test-build labels. */
+.brand svg{border-radius:22%}
+.hero-phone{display:flex;justify-content:center}
+.phone{position:relative;width:min(100%,19rem);aspect-ratio:393/852;padding:.55rem;border-radius:2.6rem;background:#0b0d12;box-shadow:0 0 0 1px rgba(255,255,255,.06) inset,0 1px 0 rgba(255,255,255,.12) inset,0 30px 60px -28px rgba(10,20,40,.55),0 12px 24px -12px rgba(10,20,40,.35)}
+.phone img{display:block;width:100%;height:100%;object-fit:cover;object-position:top;border-radius:2.1rem;background:#111}
+.gallery{display:flex;gap:clamp(1rem,3vw,1.75rem);overflow-x:auto;scroll-snap-type:x mandatory;padding:.5rem .25rem 1.25rem;margin:1.75rem -.25rem 0;scrollbar-width:thin;overscroll-behavior-x:contain}
+.gallery:focus-visible{outline-offset:6px}
+.shot{flex:0 0 auto;width:min(72vw,15.5rem);margin:0;scroll-snap-align:start}
+.shot .phone{width:100%;border-radius:2.2rem;padding:.45rem}
+.shot .phone img{border-radius:1.8rem}
+.shot .shot figcaption{margin:.85rem .2rem 0;font-size:.98rem;line-height:1.4;color:var(--soft)}
+.gate-scope{margin:0 0 .25rem}
+.law-box{margin:0 0 1rem;padding:.9rem 1rem;max-width:34rem;border:1px solid #e0b450;background:#fff8e6;color:#3d2a00;border-radius:14px}
+.law-box label{display:flex;gap:.65rem;align-items:flex-start;font-weight:700;cursor:pointer;font-size:1.02rem}
+.law-box input{width:1.25rem;height:1.25rem;margin:.12rem 0 0;flex:none;accent-color:#8a5200}
+.law-box p{margin:.5rem 0 0;font-size:.95rem}
+.law-box a{color:#6b4000;font-weight:700}
+.gate-scope a[aria-disabled="true"]{opacity:.45;cursor:not-allowed;pointer-events:none;filter:grayscale(.4);box-shadow:none}
+.law-band{background:var(--raised)}
+.beta-tag{display:inline-block;margin-left:-.9rem;font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.3rem .5rem;border-radius:6px;background:#ffe7b3;color:#5c3b00;border:1px solid #e0b450}
+.beta-note{max-width:34rem;padding:.8rem 1rem;border-radius:12px;background:#ffe7b3;color:#3d2a00;border:1px solid #e0b450}
+.mapp-soon{display:inline-block;padding:.85rem 1.3rem;border:1px dashed var(--rule);border-radius:14px;color:var(--soft);font-weight:700}
+code.sum{word-break:break-all}
+@media (prefers-color-scheme:dark){
+  .law-box,.beta-note{background:#2a2108;color:#ffe9b8;border-color:#7a5c14}
+  .law-box a{color:#ffd27a}
+  .law-box input{accent-color:#ffb347}
+  .beta-tag{background:#4a3500;color:#ffe2a3;border-color:#8a6a1c}
+  .phone{box-shadow:0 0 0 1px rgba(255,255,255,.1) inset,0 30px 60px -28px rgba(0,0,0,.8)}
+}
+@media (max-width:40rem){.hero-phone .phone{width:min(78%,17rem)}}
