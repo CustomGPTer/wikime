@@ -1,8 +1,6 @@
-WikiMe 1.0.2
+WikiMe 1.0.3 ties WikiMe into TorusApps.com.
 
-- Fixes articles saying "You're offline" with Tor switched on. WikiMe now talks to Tor directly and hands it the site's name, so it works the same on every phone.
-- With Tor on, pages get more time to arrive, and a Tor hiccup is reported as Tor rather than as being offline.
+- Check for a newer version and More apps now open torusapps.com in the browser. WikiMe itself still contacts nothing but Wikipedia.
+- Settings › About adds the website, privacy policy, hello@torusapps.com and Developed by Jonathan Jackson.
 
-Install it over the old version; saved articles, history and settings are kept.
-
-WikiMe.apk: 24,890,715 bytes. SHA-256 0aed43a8c4a97983ac9cbb0f1ec695224dede9437a01562ec64103b3794efe32
+Installs over the earlier version and keeps everything.
